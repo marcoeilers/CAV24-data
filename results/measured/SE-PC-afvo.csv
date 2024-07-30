@@ -1,0 +1,6 @@
+File,Outputs,Mean [ms],StdDev [ms],RelStdDev [%],Best [ms],Median [ms],Worst [ms], ResultsConsistent, Results
+Py/nagini/normal/scion/handle_extensions.vpr,0,137439,356,0,137054,137352,137913,true,success,QPs=48;SCcomps=84;methods=22;postBranches=236;proverWarnings=0
+Py/nagini/normal/scion/link_type.vpr,2,20862,192,0,20595,20951,21042,true,1060.16-invariant.not.preserved:assertion.false;1066.20-application.precondition:assertion.false,QPs=12;SCcomps=630;methods=11;postBranches=6;proverWarnings=0
+Py/nagini/normal/scion/send.vpr,0,407768,1401,0,405787,408729,408790,true,success,QPs=160;SCcomps=252;methods=24;postBranches=2;proverWarnings=0
+Py/nagini/normal/scion/validate_segment_switch.vpr,0,28753,404,1,28182,29034,29044,true,success,QPs=23;SCcomps=105;methods=14;postBranches=6;proverWarnings=0
+Py/nagini/normal/scion/verify_hof.vpr,0,42361,1555,3,40284,42775,44025,true,success,QPs=27;SCcomps=0;methods=8;postBranches=2;proverWarnings=4
