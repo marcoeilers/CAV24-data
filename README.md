@@ -27,12 +27,31 @@ The data in this repository is structured as follows:
 
 ## Benchmarks.ods
 
+``Benchmarks.ods`` is the main file that collects all runtimes for all implementations, and contains the following data:
+- One sheet for each implementation contains the benchmark data for all examples for each implementation. This data is copy-pasted exactly from the relevant CSV file in ``results/consolidated``.
+- In sheet 1, all data is collected:
+  - Column 1 contains the names and paths of all examples that we used in the benchmark (since, as stated above, not all files in ``benchmarks/examples_all`` were included).
+  - Column 2 contains the expected verification result for each example.
+  - The following columns contain, for each implementation
+    - ``Mean``: the mean time for each algorithm across five runs (after eliminating the two most extreme runs, as described in the paper)
+    - ``Consistent``: whether the reported result was consistent across all five runs
+    - ``Result``: the reported result
+  - Additionally, there are ``Notes`` columns for each implementation that log some additional data. In particular, the statements in the paper about some groups having a lot of branching is based on this data and the calculation in the following columns.
+
 ## analysis.ipynb
+
+This is the main file that reads the benchmark data in ``benchmark_data.csv`` and computes completeness numbers, portfolios, and generates the box plots shown in the paper.
+In particular:
+- It outputs some data starting with "Completeness-relevant data" that contains the absolute numbers that form the basis of Table 1 in the paper (but transposed).
+  - The first two lines contain all gorups and the number of examples they contain
+  - Then, there are two lines for each algorithm. The first represents, for each group, how many examples were incomplete. The second, how many of those incompletenesses were due to timeouts or inconsistent results. Table 1 in the papers shows these numbers converted to percentages of the number of examples per group.
+- The section below ``Computing portfolios...`` contains identified portfolio that is complete for all examples, and for all portfolios that are not complete for all examples, the number for which they are incomplete and the names of the incomplete examples.
+- The code below that generates the data discussed below.
 
 ## Generated analysis data
 
 - Subdirectory ``boxplots``, which contains the performance box plots show in the paper (and others that compare pairs of algorithms and portfolios not shown in the paper).
-- Subdirectory ``logging``, which
-- Subdirectory ``runtime_excels``, which
-- Subdirectory ``completeness_excels``, which
+- Subdirectory ``completeness_excels``, which show a detailed (per-example) comparison of completeness differences for each pair of implementations.
+- Subdirectory ``runtime_excels``, which show a detailed, per-example performance comparoson for the relevant examples for each pair of implementations.
+- Subdirectory ``logging``, which contains various kinds of intermediate data.
     
