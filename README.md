@@ -1,4 +1,5 @@
 This repository contains all relevant data for the evaluation of the CAV 2024 paper "Verification Algorithms for Automated Separation Logic Verifiers".
+The same data including the implementations of all five benchmarked algorithms can also be found in our [artifact](https://doi.org/10.5281/zenodo.11218239).
 
 ## Structure
 
